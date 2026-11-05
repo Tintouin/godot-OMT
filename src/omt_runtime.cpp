@@ -31,7 +31,7 @@ void initialize() {
         std::string vmx = dir + "/libvmx.so";
         if (!dlopen(vmx.c_str(), RTLD_NOW | RTLD_GLOBAL)) {
             godot::UtilityFunctions::push_warning(
-                godot::String("OMT: impossible de précharger ") + godot::String::utf8(vmx.c_str()) +
+                godot::String("OMT: unable to preload ") + godot::String::utf8(vmx.c_str()) +
                 " : " + godot::String::utf8(dlerror()));
         }
     }

@@ -1,13 +1,9 @@
 extends Node3D
 
-var finder = OMTFinder.new()
-
 func _ready():
+	var finder = OMTFinder.new()
 	add_child(finder)
-	print("Finder started")
-	await get_tree().create_timer(3.0).timeout
-	finder.refresh()
-	print("Sources : ", finder.get_sources())
+	finder.sources_changed.connect(_on_sources_changed.bind(finder))
 
-func _process(delta: float) -> void:
-	print("Sources : ", finder.get_sources())
+func _on_sources_changed(finder):
+	print("sources_changed: ", finder.get_sources())

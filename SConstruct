@@ -5,7 +5,7 @@ import sys
 from methods import print_error
 
 
-libname = "EXTENSION-NAME"
+libname = "godot_omt"
 projectdir = "project"
 
 localEnv = Environment(tools=["default"], PLATFORM="")
@@ -38,6 +38,10 @@ Run the following command to download godot-cpp:
 env = SConscript("godot-cpp/SConstruct", {"api_version": 4.3, "env": env, "customs": customs})
 
 env.Append(CPPPATH=["src/"])
+env.Append(CPPPATH=["thirdparty/libomt"])
+if env["platform"] == "linux":
+    env.Append(LIBPATH=["thirdparty/libomt/linux"], LIBS=["omt", "dl"])
+    env.Append(LINKFLAGS=["-Wl,-rpath,'$$ORIGIN'"])
 sources = Glob("src/*.cpp")
 
 if env["target"] in ["editor", "template_debug"]:

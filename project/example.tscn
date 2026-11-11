@@ -2,9 +2,17 @@
 
 [ext_resource type="Script" uid="uid://bkwk40ybs8kgm" path="res://example.gd" id="1_jdh55"]
 [ext_resource type="Script" uid="uid://da1amrukdwbut" path="res://OMTest.gd" id="2_n51mc"]
+[ext_resource type="Script" uid="uid://bxrgx616wgxd" path="res://control.gd" id="3_8lvy3"]
 
 [node name="Node" type="Node" unique_id=390320393]
 script = ExtResource("1_jdh55")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=791639693]
 script = ExtResource("2_n51mc")
+
+[node name="Control" type="Control" parent="." unique_id=1420187254]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_8lvy3")

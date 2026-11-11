@@ -9,7 +9,6 @@ void OMTFinder::_bind_methods() {
 }
 
 void OMTFinder::_ready() {
-    UtilityFunctions::print("OMTFinder: _ready has been called");
     set_process(true);
     refresh();
 }

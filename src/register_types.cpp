@@ -8,6 +8,8 @@
 #include "example_class.h"
 #include "omt_finder.h"
 #include "omt_runtime.h"
+#include "video_stream_omt.h"
+#include "video_stream_playback_omt.h"
 
 using namespace godot;
 
@@ -18,6 +20,8 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level)
 		return;
 	}
 	GDREGISTER_CLASS(OMTFinder);
+	GDREGISTER_CLASS(VideoStreamOMT);
+	GDREGISTER_CLASS(VideoStreamPlaybackOMT);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

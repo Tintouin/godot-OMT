@@ -1,6 +1,6 @@
 extends Control
 
-const WANTED := "Test Godot"
+const WANTED := "OBS Output"
 
 func _ready():
 	var finder = OMTFinder.new()
